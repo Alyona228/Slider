@@ -39,9 +39,10 @@
   line-height: 19px;
   text-transform: uppercase;
   font-family: 'Yeseva One';
-  color: #E3B873;
   border: none;
-  background-color: #e7e7e7;
+  background-color: #131313;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
 .page2__button--current {
@@ -65,10 +66,10 @@
   content: '';
   width: 92px;
   height: 1px;
-  top: 53px;
+  top: 75px;
   position: absolute;
   background: #e3b873;
-  transform: translate(20%, -85%);
+  transform: translate(70%, -20%);
 }
 
 .page2__text {
@@ -154,10 +155,20 @@
 .page2__arrow {
   width: 40px;
   height: 1.34em;
-  background-color: black;
-  border: black;
+  background-color: #131313;
+  border: #131313;
   display: inline-block;
   cursor: pointer;
+}
+
+.page2__arrow--centr {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-left: 20px;
+  background: #FFFFFF;
+  border-radius: 50px;
+
 }
 
 .page2__arrow--left {
@@ -165,5 +176,5 @@
 }
 
 .page2__arrow--right {
-  margin-left: 300px;
+  margin-left: 30px;
 }
