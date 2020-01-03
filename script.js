@@ -4,7 +4,6 @@ const data = [{
     area: '81 m2',
     time: '3.5 months',
     cost: 'Upon request',
-    button: 'Rostov-on-Don, Admiral',
   },
   {
     img: 'url("./images/image3.jpg")',
@@ -12,7 +11,6 @@ const data = [{
     area: '105 m2',
     time: '4 months',
     cost: 'Upon request',
-    button: 'Sochi Thieves',
   },
   {
     img: 'url("./images/image2.jpg")',
@@ -20,11 +18,19 @@ const data = [{
     area: '93 m2',
     time: '3 months',
     cost: 'Upon request',
-    button: 'Rostov-on-Don Patriotic',
   },
 ]
 
 let currentIndex = 0
+
+
+
+
+const buttons = document.getElementsByClassName('page2__button')
+const circle = document.getElementsByClassName('page2__circle')
+
+
+
 
 function setCurrentParams(index) {
   const img = document.querySelector('.page2__images')
@@ -32,7 +38,16 @@ function setCurrentParams(index) {
   const area = document.getElementById('area')
   const time = document.getElementById('time')
   const cost = document.getElementById('cost')
-  const button = document.querySelector('.page2__button')
+
+  for (let i = 0; i < data.length; i++) {
+    buttons[i].classList.remove('page2__button--current')
+    circle[i].classList.remove('page2__circle--current')
+  }
+  buttons[index].classList.add('page2__button--current')
+  circle[index].classList.add('page2__circle--current')
+
+
+  console.log(index)
 
 
   img.style.backgroundImage = data[index].img
@@ -40,7 +55,6 @@ function setCurrentParams(index) {
   time.textContent = data[index].time
   cost.textContent = data[index].cost
   city.textContent = data[index].city
-  button.style.background = data[index].button
 
   currentIndex = index
 }
