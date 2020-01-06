@@ -27,13 +27,13 @@ let currentIndex = 0
 const buttons = document.getElementsByClassName('page2__button')
 const circle = document.getElementsByClassName('page2__circle')
 
-function setCurrentParams(index) {
-  const img = document.querySelector('.page2__images')
-  const city = document.getElementById('city')
-  const area = document.getElementById('area')
-  const time = document.getElementById('time')
-  const cost = document.getElementById('cost')
+const img = document.querySelector('.page2__images')
+const city = document.getElementById('city')
+const area = document.getElementById('area')
+const time = document.getElementById('time')
+const cost = document.getElementById('cost')
 
+function setCurrentParams(index) {
   for (let i = 0; i < data.length; i++) {
     buttons[i].classList.remove('page2__button--current')
     circle[i].classList.remove('page2__circle--current')
@@ -67,34 +67,14 @@ arrowRight.addEventListener('mousedown', e => {
   }
 })
 
-const fistCircle = document.querySelectorAll('.page2__circle')[0]
-console.log(fistCircle)
-fistCircle.addEventListener('mousedown', function() {
-  setCurrentParams(0)
-})
+for (let i = 0; i < 3; i++) {
+  const Circle = document.querySelectorAll('.page2__circle')[i]
+  Circle.addEventListener('mousedown', function() {
+    setCurrentParams(i)
+  })
 
-const secondCircle = document.querySelectorAll('.page2__circle')[1]
-console.log(secondCircle)
-secondCircle.addEventListener('mousedown', function() {
-  setCurrentParams(1)
-})
-const thirdCircle = document.querySelectorAll('.page2__circle')[2]
-console.log(thirdCircle)
-thirdCircle.addEventListener('mousedown', function() {
-  setCurrentParams(2)
-})
-
-const firstButton = document.querySelectorAll('.page2__button')[0]
-firstButton.addEventListener('mousedown', function() {
-  setCurrentParams(0)
-})
-
-const secondButton = document.querySelectorAll('.page2__button')[1]
-secondButton.addEventListener('mousedown', function() {
-  setCurrentParams(1)
-})
-
-const thirdButton = document.querySelectorAll('.page2__button')[2]
-thirdButton.addEventListener('mousedown', function() {
-  setCurrentParams(2)
-})
+  const Button = document.querySelectorAll('.page2__button')[i]
+  Button.addEventListener('mousedown', function() {
+    setCurrentParams(i)
+  })
+}
